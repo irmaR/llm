@@ -1,0 +1,26 @@
+Version info:  Boolean subsampling fixed - full feature space for all - FIXED PROBLEM WITH LOADING INTERPRETATIONS - added features to blocks functionality
+----------------  AlgorithmParameters --------------------- 
+ input_path = /home/irma/workspace/HybridRDN/UniversityExample/University_domain_200X75x75/
+ output_path = /home/irma/workspace/HybridRDN/UniversityExample/Results/
+ discretization info path = null
+ is learning independent model = false
+ is learning discretized model = false
+ discretization_level =-1
+ is using subsampled negatives = false
+ is doing detailed logging = true
+ is redoing experiments = false
+ is using feature blocks =  true
+ is cache being used (default is true) =  true
+ feature length = 5
+ feature space cutoff = -1
+ is model to be evaluated = true
+ debugging flag set = false
+ no. logvar renamings = 2
+ penalty validation = MDL PENALTY as log2(nr_data_points)*number_of_free_parameters*number_of_literals_per_feature)/2
+ ratios_for_subsampling = {}
+ output_path =/home/irma/workspace/HybridRDN/UniversityExample/Results/
+ discretization_info_path =null
+ nr_randvarTestsPerFeature = 2
+ predicate_name =[intelligence]
+ feature space limit (sampling) =  -1
+ learn_for_a_subset_of_predicates = true

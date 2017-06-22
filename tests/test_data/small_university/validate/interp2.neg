@@ -1,0 +1,6 @@
+friend(s3,s3).
+friend(s1,s1).
+friend(s3,s2).
+friend(s3,s0).
+friend(s2,s2).
+friend(s3,s1).

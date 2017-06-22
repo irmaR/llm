@@ -1,0 +1,68 @@
+ DATA INFO: 
+
+ TRAINING DATA: 
+ Number of interpretations :1Nr groundings per atom: 
+teaches(P,C) = 2500 nrhours(C) = 50 intelligence(S) = 100 satisfaction(S,C) = 1157 difficulty(C) = 50 ability(P) = 50 friend(S,S1) = 422 grade(S,C) = 1157 takes(S,C) = 2314 --------------------------------------------------- 
+
+ VALIDATION DATA: 
+ Number of interpretations :1Nr groundings per atom: 
+teaches(P,C) = 2500 nrhours(C) = 50 intelligence(S) = 100 satisfaction(S,C) = 700 difficulty(C) = 50 ability(P) = 50 friend(S,S1) = 396 grade(S,C) = 700 takes(S,C) = 1400 --------------------------------------------------- 
+
+ TEST DATA: 
+ Number of interpretations :1Nr groundings per atom: 
+teaches(P,C) = 2500 nrhours(C) = 50 intelligence(S) = 100 satisfaction(S,C) = 1209 difficulty(C) = 50 ability(P) = 50 friend(S,S1) = 10000 grade(S,C) = 1209 takes(S,C) = 5000 --------------------------------------------------- 
+
+Generating features based on: [ability(P), difficulty(C), nrhours(C), intelligence(S), grade(S,C), satisfaction(S,C), takes(S,C), teaches(P,C), friend(S,S1), difficulty(C,easy), difficulty(C,medium), difficulty(C,hard), grade(S,C,low), grade(S,C,mid), grade(S,C,high), satisfaction(S,C,low), satisfaction(S,C,mid), satisfaction(S,C,high)]
+FEATURES for teaches(P,C)
+ FEATURE SPACE SIZE: 23
+Marginal dependency parameters  true ---> 0.02038369304556355
+false ---> 0.9796163069544365
+
+Marginal dependency teaches(P,C) | 
+Marginal score: Score(teaches(P,C) | ) = -364.9024469717529
+ Extensions ... 
+SCORE: teaches(P,C) | [0 Value ability(P) ]_ = -404.09989633974294
+SCORE: teaches(P,C) | [1 Value difficulty(C) ]_ = -387.4644934932177
+SCORE: teaches(P,C) | [2 Value nrhours(C) ]_ = -387.4644934932178
+SCORE: teaches(P,C) | [3 Mode grade(S,C) ]_ = -387.4644934932182
+SCORE: teaches(P,C) | [4 Mode satisfaction(S,C) ]_ = -387.4644934932179
+SCORE: teaches(P,C) | [5 Value nrhours(C) difficulty(C,easy) ]_ = -404.396062062542
+SCORE: teaches(P,C) | [6 Value nrhours(C) difficulty(C,medium) ]_ = -404.396062062542
+SCORE: teaches(P,C) | [7 Value nrhours(C) difficulty(C,hard) ]_ = -404.39606206254166
+SCORE: teaches(P,C) | [8 Mode grade(S,C) difficulty(C,easy) ]_ = -404.396062062542
+SCORE: teaches(P,C) | [9 Mode grade(S,C) difficulty(C,medium) ]_ = -404.3960620625429
+SCORE: teaches(P,C) | [10 Mode grade(S,C) difficulty(C,hard) ]_ = -404.396062062542
+SCORE: teaches(P,C) | [11 Mode satisfaction(S,C) difficulty(C,easy) ]_ = -404.396062062542
+SCORE: teaches(P,C) | [12 Mode satisfaction(S,C) difficulty(C,medium) ]_ = -404.39606206254234
+SCORE: teaches(P,C) | [13 Mode satisfaction(S,C) difficulty(C,hard) ]_ = -404.39606206254206
+SCORE: teaches(P,C) | [14 Value nrhours(C) difficulty(C,easy) difficulty(C,medium) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [15 Value nrhours(C) difficulty(C,easy) difficulty(C,hard) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [16 Value nrhours(C) difficulty(C,medium) difficulty(C,hard) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [17 Mode grade(S,C) difficulty(C,easy) difficulty(C,medium) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [18 Mode grade(S,C) difficulty(C,easy) difficulty(C,hard) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [19 Mode grade(S,C) difficulty(C,medium) difficulty(C,hard) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [20 Mode satisfaction(S,C) difficulty(C,easy) difficulty(C,medium) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [21 Mode satisfaction(S,C) difficulty(C,easy) difficulty(C,hard) ]_ = -421.32763063186377
+SCORE: teaches(P,C) | [22 Mode satisfaction(S,C) difficulty(C,medium) difficulty(C,hard) ]_ = -421.32763063186377
+Best score: Score(teaches(P,C) | ) = -364.9024469717529
+--------------------------------------------------------
+Score(teaches(P,C) | ) = -364.9024469717529 > Score(teaches(P,C) | ) = -364.9024469717529?  false 
+TIME: (nanoseconds): 32203964156
+TIME: (seconds): 32.203979924
+Time needed for structure learning: 32 secs. -----------------
+Top five features: 
+
+FIVE BEST DEPENDENCIES: 
+0: Score(teaches(P,C) | ) = -364.9024469717529
+1: Score(teaches(P,C) | [1 Value difficulty(C) ]_) = -387.4644934932177
+2: Score(teaches(P,C) | [2 Value nrhours(C) ]_) = -387.4644934932178
+3: Score(teaches(P,C) | [4 Mode satisfaction(S,C) ]_) = -387.4644934932179
+4: Score(teaches(P,C) | [3 Mode grade(S,C) ]_) = -387.4644934932182
+5: Score(teaches(P,C) | [0 Value ability(P) ]_) = -404.09989633974294
+--------------------------------------------------
+Learned dep: Score(teaches(P,C) | ) = -364.9024469717529
+LEARNED: NONE
+
+Parameters:  true ---> 0.02038369304556355
+false ---> 0.9796163069544365
+

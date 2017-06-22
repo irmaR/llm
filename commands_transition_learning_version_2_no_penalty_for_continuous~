@@ -1,0 +1,41 @@
+screen -dmS run_pos_x_next_pen_0_1 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration_No_penalty_for_cont/Penalty_0_1/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 0.1 -penalty_validation npfc ;
+
+screen -dmS run_pos_y_next_pen_0_1 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration_No_penalty_for_cont/Penalty_0_1/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 0.1 -penalty_validation npfc ;
+ 
+screen -dmS run_pos_z_next_pen_0_1 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration_No_penalty_for_cont/Penalty_0_1/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 0.1 -penalty_validation npfc ;
+
+
+screen -dmS run_pos_x_next_pen_1 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_1/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1 -penalty_validation npfc;
+
+screen -dmS run_pos_y_next_pen_1 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_1/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1 -penalty_validation npfc;
+
+screen -dmS run_pos_z_next_pen_1 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_1/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1 -penalty_validation npfc;
+
+
+screen -dmS run_pos_x_next_pen_2 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_2/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 2 -penalty_validation npfc;
+
+screen -dmS run_pos_y_next_pen_2 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_2/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 2 -penalty_validation npfc;
+
+screen -dmS run_pos_z_next_pen_2 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_2/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 2 -penalty_validation npfc;
+
+
+screen -dmS run_pos_x_next_pen_50 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_50/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 -penalty_validation npfc;
+
+screen -dmS run_pos_y_next_pen_50 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_50/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 -penalty_validation npfc;
+
+screen -dmS run_pos_z_next_pen_50 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_50/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 -penalty_validation npfc;
+
+screen -dmS run_pos_x_next_pen_100 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_100/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 -penalty_validation npfc;
+
+screen -dmS run_pos_y_next_pen_100 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_100/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 -penalty_validation npfc;
+
+screen -dmS run_pos_z_next_pen_100 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_100/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 -penalty_validation npfc;
+
+
+screen -dmS run_pos_x_next_pen_1000 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_1000/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000 -penalty_validation npfc;
+
+screen -dmS run_pos_y_next_pen_1000 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_1000/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000 -penalty_validation npfc;
+
+screen -dmS run_pos_z_next_pen_1000 java -jar workspace/HybridRDN_clean_checkout/learn_by_demonstration_version2.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/Learn_By_Demonstration/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/Learn_By_Demonstration/Penalty_1000/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000 -penalty_validation npfc;
+
+

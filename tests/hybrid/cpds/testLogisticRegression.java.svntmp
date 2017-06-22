@@ -1,0 +1,67 @@
+package hybrid.cpds;
+
+import hybrid.dependencies.Dependency;
+import hybrid.features.Average;
+import hybrid.features.ContinuousValue;
+import hybrid.features.Feature;
+import hybrid.features.FeatureTypeException;
+import hybrid.features.ValueFt;
+import hybrid.network.Atom;
+import hybrid.network.CategoricalPred;
+import hybrid.network.GaussianPred;
+import hybrid.network.Logvar;
+import hybrid.network.NumberValue;
+import hybrid.network.Predicate;
+import hybrid.network.StringValue;
+import hybrid.network.Type;
+import hybrid.network.Value;
+import hybrid.network.WrongValueType;
+import hybrid.parameters.LGregressors;
+import hybrid.parameters.Regression;
+import hybrid.parameters.WrongValueSpecification;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+
+import junit.framework.Assert;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class testLogisticRegression {
+
+	
+static ArrayList<Value> values;
+	
+    static Dependency dep1;
+    static Dependency dep2;
+    static Atom grade;
+    static Atom intelligence;
+    
+
+	@BeforeClass
+	public static void setUp(){
+		Type stud=new Type("student");
+		Type c=new Type("course");
+		Logvar student=new Logvar("S",stud);
+		Logvar course=new Logvar("C",c);
+
+		grade=new Atom(new CategoricalPred("grade",2,new String[]{"low","mid","high"}),new ArrayList(Arrays.asList(new Logvar[]{student,course})));
+		intelligence=new Atom(new GaussianPred("intelligence",2,50.0,180.0),new ArrayList(Arrays.asList(new Logvar[]{student})));
+		ValueFt val=new ContinuousValue(new Logvar[]{student},intelligence);
+		dep1=new Dependency(grade,new Feature[]{val});
+	}
+	
+	@Test
+	public void testBooleanPreds() throws FeatureTypeException, WrongParameterNumber, WrongValueSpecification, WrongValueType{
+		LogisticRegression lgR=new LogisticRegression(dep1);
+		Regression lg1=new Regression(dep1, 0.2, new Double[]{2.5});
+		Regression lg2=new Regression(dep1, 0.5, new Double[]{4.5});
+		lgR.addParameter(new StringValue("low"),lg1);
+		lgR.addParameter(new StringValue("mid"),lg2);
+		System.out.println(lgR.getParameters().printParameters());
+	}
+	
+}

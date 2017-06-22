@@ -1,0 +1,7 @@
+bias and coefficients,-0.00176362258655,0.978810657066,0.015245116553
+STD train,0.0211067079145
+sum loglikelihood CV train,974.658049636
+sum loglikelihood test,0
+sum squared error CV train,0.198542284162
+sum squared error test,0.0
+<class 'sklearn.linear_model.ridge.Ridge'>,0.01,0.0001

@@ -1,0 +1,13 @@
+screen -dmS pos_x_next_pen_2_with_orientation java -jar workspace/HybridRDN_clean_checkout/STWithOrientation.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/StateTransition/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/State_transition/WithOrientation/DoublePenaltyForComplexFts/Penalty2/ -ext workspace/HybridRDN_clean_checkout/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS pos_y_next_pen_2_with_orientation java -jar workspace/HybridRDN_clean_checkout/STWithOrientation.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/StateTransition/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/State_transition/WithOrientation/DoublePenaltyForComplexFts/Penalty2/ -ext workspace/HybridRDN_clean_checkout/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS pos_z_next_pen_2_with_orientation java -jar workspace/HybridRDN_clean_checkout/STWithOrientation.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/StateTransition/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/State_transition/WithOrientation/DoublePenaltyForComplexFts/Penalty2/ -ext workspace/HybridRDN_clean_checkout/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002
+
+####### Without orientation
+
+screen -dmS pos_x_next_pen_2_without_orientation java -jar workspace/HybridRDN_clean_checkout/STWithoutOrientation.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/StateTransition/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/State_transition/WithoutOrientation/DoublePenaltyForComplexFts/Penalty2/ -ext workspace/HybridRDN_clean_checkout/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS pos_y_next_pen_2_without_orientation java -jar workspace/HybridRDN_clean_checkout/STWithoutOrientation.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/StateTransition/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/State_transition/DWithoutOrientation/oublePenaltyForComplexFts/Penalty2/ -ext workspace/HybridRDN_clean_checkout/ -predicates pos_y_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS pos_z_next_pen_2_without_orientation java -jar workspace/HybridRDN_clean_checkout/STWithoutOrientation.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/StateTransition/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/State_transition/WithoutOrientation/DoublePenaltyForComplexFts/Penalty2/ -ext workspace/HybridRDN_clean_checkout/ -predicates pos_z_next -alpha_stdev 5 -beta_stdev 0.002

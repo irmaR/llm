@@ -1,0 +1,39 @@
+Dependency:
+next_x_dimension1(OBJ) | current_x(OBJ)
+                         Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}
+                         Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}
+                         displacement(OBJ)
+
+Parameters:
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->true,Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->true] -->LinearGaussianPar [reg_coeff=8.587166533402524E-10+3 Value unsorted: current_x(OBJ) *0.99999999987653922 Value unsorted: displacement(OBJ) *0.0, std=2.542167324931206E-10]
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->false,Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->true] -->LinearGaussianPar [reg_coeff=0.03523122640058349+3 Value unsorted: current_x(OBJ) *0.99361349136397442 Value unsorted: displacement(OBJ) *0.9899653616872179,std=0.13994209885094275]
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->true, Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->false] -->the parameters couldn't be estimated!
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->false, Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->false] -->LinearGaussianPar [reg_coeff=4.331277558833335E-10+3 Value unsorted: current_x(OBJ) *0.99999999986666742 Value unsorted: displacement(OBJ) *0.0, std=2.844307534909671E-10]
+
+
+
+
+Dependency:
+next_x_dimension2(OBJ) | current_x(OBJ)
+                         Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}
+                         Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}
+                         displacement(OBJ)
+
+Parameters:
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->true, 0 Min  {current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->false] -->the parameters couldn't be estimated!
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->false, 0 Min  {current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->true] -->LinearGaussianPar [reg_coeff=0.0038536121264857413+3 current_x(OBJ) *1.00154291088492 Value unsorted: displacement(OBJ) *1.0077852072659867, std=0.04507455659595556]
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->true,Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->true] -->LinearGaussianPar [reg_coeff=7.443157201691974E-10+current_x(OBJ) *0.99999999989362042+displacement(OBJ) *0.0,std=2.3451060073218123E-10]
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->false,Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->false] -->LinearGaussianPar [reg_coeff=3.631592804254069E-10+current_x(OBJ) *0.99999999988095272 Value unsorted: displacement(OBJ) *0.0, std=2.440385069605897E-10
+
+
+Dependency:
+ next_x_dimension3(OBJ) | current_x(OBJ)
+                          Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}
+                          Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}
+                          displacement(OBJ)
+
+Parameters:
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->false,Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->true] -->LinearGaussianPar [reg_coeff=0.04901566459857959+current_x(OBJ) *0.99515460679677362 +displacement(OBJ) *0.9969389744558881, std=0.09602456818154076]
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->true, 0 Min  {current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->false] -->the parameters couldn't be estimated!
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->true, 0 Min  {current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->true] -->LinearGaussianPar [reg_coeff=7.910063715144133E-10+3 current_x(OBJ) *0.99999999988889492+displacement(OBJ) *0.0,std=2.382619590118724E-10]
+Max{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >1.0}->false,Min{current_x(OBJ) - current_x(OBJ_1) <- [moved(OBJ_1)] >-1.0}->false] -->LinearGaussianPar [reg_coeff=3.831175376944884E-10+current_x(OBJ) *0.9999999998809532+displacement(OBJ) *0.0,std=2.389336471938304E-10]

@@ -1,0 +1,70 @@
+screen -dmS run_pos_x_next_fold1 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold1/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold1/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS run_pos_x_next_fold2 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold2/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold2/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS run_pos_x_next_fold3 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold3/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold3/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS run_pos_x_next_fold4 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold4/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold4/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS run_pos_x_next_fold5 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold5/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold5/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS run_pos_x_next_fold6 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold6/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold6/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS run_pos_x_next_fold7 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold7/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold7/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+screen -dmS run_pos_x_next_fold8 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold8/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_2/fold8/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002
+
+
+#### PENALTY 50
+screen -dmS run_pos_x_next_fold1_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold1/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold1/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+screen -dmS run_pos_x_next_fold2_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold2/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold2/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+screen -dmS run_pos_x_next_fold3_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold3/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold3/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+screen -dmS run_pos_x_next_fold4_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold4/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold4/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+screen -dmS run_pos_x_next_fold5_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold5/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold5/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+screen -dmS run_pos_x_next_fold6_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold6/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold6/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+screen -dmS run_pos_x_next_fold7_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold7/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold7/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+screen -dmS run_pos_x_next_fold8_pen_50 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold8/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_50/fold8/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 50 ;
+
+
+#### PENALTY 100
+screen -dmS run_pos_x_next_fold1_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold1/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold1/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+screen -dmS run_pos_x_next_fold2_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold2/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold2/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+screen -dmS run_pos_x_next_fold3_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold3/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold3/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+screen -dmS run_pos_x_next_fold4_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold4/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold4/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+screen -dmS run_pos_x_next_fold5_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold5/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold5/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+screen -dmS run_pos_x_next_fold6_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold6/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold6/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+screen -dmS run_pos_x_next_fold7_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold7/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold7/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+screen -dmS run_pos_x_next_fold8_pen_100 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold8/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_100/fold8/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 100 ;
+
+#### PENALTY 1000
+screen -dmS run_pos_x_next_fold1_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold1/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold1/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+screen -dmS run_pos_x_next_fold2_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold2/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold2/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+screen -dmS run_pos_x_next_fold3_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold3/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold3/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+screen -dmS run_pos_x_next_fold4_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold4/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold4/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+screen -dmS run_pos_x_next_fold5_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold5/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold5/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+screen -dmS run_pos_x_next_fold6_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold6/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold6/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+screen -dmS run_pos_x_next_fold7_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold7/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold7/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+screen -dmS run_pos_x_next_fold8_pen_1000 java -jar workspace/HybridRDN_clean_checkout/box_dec_tree.jar -input /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Data/box_data/transition_new/Cross_validation_8_folds/fold8/ -output /cw/dtaijupiter/NoCsBack/dtai/irma/Davide_experiments/Results/box_data/transition_new/Cross_validation_8_folds_penalty_1000/fold8/ -predicates pos_x_next -alpha_stdev 5 -beta_stdev 0.002 -penalty_coefficient 1000
+
+

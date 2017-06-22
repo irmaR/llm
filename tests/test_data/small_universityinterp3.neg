@@ -1,0 +1,3 @@
+teaches(p1,c1).
+teaches(p0,c0).
+teaches(p1,c2).
