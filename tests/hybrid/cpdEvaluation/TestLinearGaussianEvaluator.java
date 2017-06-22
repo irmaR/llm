@@ -44,7 +44,7 @@ import hybrid.parameters.Gaussian;
 import hybrid.parameters.LinearGParameters;
 import hybrid.parameters.LinearGaussianCoeff;
 import hybrid.parameters.Regression;
-import hybrid.queryMachine.MDLPenalty;
+import hybrid.penalties.*;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
 

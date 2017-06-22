@@ -32,7 +32,7 @@ import hybrid.network.Value;
 import hybrid.parameters.BadProbabilityDistribution;
 import hybrid.parameters.Gaussian;
 import hybrid.parameters.PMF;
-import hybrid.queryMachine.NoPenalty;
+import hybrid.penalties.*; 
 import hybrid.querydata.QueryData;
 
 import org.junit.Before;
@@ -172,7 +172,7 @@ public class TestGaussianPriorEvaluator {
 		Gaussian par=(Gaussian) cpd.estimateParameters(qD);
 		GaussianPrior gP=new GaussianPrior(qD.getDep(),cpd,new Gaussian());
 		gP.setParameters(par);
-		assertEquals(-21.3865,cpd.calculatePLL(qD, (Gaussian) gP.getParameters(),new NoPenalty()),0.001);
+		assertEquals(-21.3865,cpd.calculatePLL(qD, (Gaussian) gP.getParameters(),new NoPenalty()).getScore(),0.001);
 	}
 	
 	

@@ -90,21 +90,7 @@ public class TestCGParameters {
 		assertEquals(CGParameters.class,cg.getParameters().getClass());	
 	}
 	
-	
-	@Test
-	public void testNumberOfFreePars() throws FeatureTypeException, ConjunctionConstructionProblem{
-		Mode ft=new Mode(new Standard_Conjunction(intelligence,new PosLiteral(grade)));
-		Dependency dep=new Dependency(intelligence,new Feature[]{ft});
-		CGParameters cgPars=new CGParameters(dep);
-		AssignmentKey key1=new AssignmentKey(new Feature[]{ft},new Value[]{new StringValue("low")});
-		AssignmentKey key2=new AssignmentKey(new Feature[]{ft},new Value[]{new StringValue("mid")});
-		AssignmentKey key3=new AssignmentKey(new Feature[]{ft},new Value[]{new StringValue("high")});
-		cgPars.addConditionalParameter(key1, new Gaussian(2.0,3.5));
-		cgPars.addConditionalParameter(key2, new Gaussian(8.0,4.5));
-		cgPars.addConditionalParameter(key3, new Gaussian(19.0,6.5));
-		assertEquals(6,cgPars.getNumberOfFreeParameters());
-		
-	}
+
 	
 	
 }

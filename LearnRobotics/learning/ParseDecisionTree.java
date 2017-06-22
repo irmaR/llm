@@ -37,7 +37,7 @@ public class ParseDecisionTree {
 		//System.out.println(e.printDigraph(e.getRoot(),""));
 		//System.out.println(e.printTree_DC(e.getRoot(),"", new DC_converter()));
 		FileWriter fw=new FileWriter(new File("/home/irma/workspace/Davide_experiments/Results/pos_z_next.dc"));
-	    fw.append(e.printTree_DC(e.getRoot(),"", new DC_converter()));
+	    fw.append(e.printTree_DC(e.getRoot(),new DC_converter()));
 	    //fw.append(e.makeDigraph(e.getRoot(),""));
 
 		fw.close();

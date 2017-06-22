@@ -8,8 +8,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 import junit.framework.Assert;
-
-import hybrid.core.GenerateUniqueIDforAtom;
 import hybrid.dependencies.Dependency;
 import hybrid.features.FeatureTypeException;
 import hybrid.network.Atom;
@@ -55,7 +53,6 @@ public class TestGetAllPossibleAtomCombinations {
 	 */
 	@Before
 	public void setUp() throws FeatureTypeException{
-		GenerateUniqueIDforAtom.reset();
 		System.out.println(pathToInterpretations);
 		Type stud=new Type("student");
 		Type c=new Type("course");

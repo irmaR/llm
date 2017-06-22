@@ -9,9 +9,9 @@ import hybrid.featureGenerator.ComplexConjunction;
 import hybrid.featureGenerator.ConjunctionConstructionProblem;
 import hybrid.featureGenerator.Standard_Conjunction;
 import hybrid.features.Average;
-import hybrid.features.Operator_Feature;
 import hybrid.features.Feature;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.TuPrologDataLoader;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Argument;
@@ -37,7 +37,7 @@ import hybrid.network.Value;
 import hybrid.operators.Addition;
 import hybrid.operators.Multiplication;
 import hybrid.operators.Subtraction;
-
+import hybrid.features.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -114,18 +114,18 @@ public class TestComplexQuery {
 		ComplexConjunction conj1=new ComplexConjunction(grade,new PosLiteral(intelligence),new PosLiteral(intelligence1),new Multiplication());
 		ComplexConjunction conj2_context_grounded=new ComplexConjunction(grade,new PosLiteral(intelligence),new PosLiteral(intelligence1),new PosLiteral[]{new PosLiteral(difficulty_low)},new Addition());
 		ComplexConjunction conj2_context_grounded_logvar_restriction=new ComplexConjunction(grade,new PosLiteral(intelligence),new PosLiteral(intelligence1),new PosLiteral[]{new PosLiteral(difficulty_low)},new Addition(),new LogvarRestrictionLiteral[]{new LogvarRestrictionLiteral("\\==", student1, student)});
-		dep1=new Dependency(grade, new Feature[]{new Operator_Feature(conj,new Smaller(100.0),new Average())});
-		dep2=new Dependency(grade, new Feature[]{new Operator_Feature(conj,new Equals(213.54453087831934),new Average())});
-		dep3=new Dependency(grade, new Feature[]{new Operator_Feature(conj_context,new Equals(214.4605391543),new Average())});
-		dep4=new Dependency(grade, new Feature[]{new Operator_Feature(conj1,new Bigger(100.0),new Average())});
-		dep5=new Dependency(grade, new Feature[]{new Operator_Feature(conj2_context_grounded,new Bigger(100.0),new Average())});
-		dep6=new Dependency(grade, new Feature[]{new Operator_Feature(conj2_context_grounded_logvar_restriction,new Bigger(100.0),new Average())});
+		dep1=new Dependency(grade, new Feature[]{new OperatorFeature(conj,new Smaller(100.0),new Average())});
+		dep2=new Dependency(grade, new Feature[]{new OperatorFeature(conj,new Equals(213.54453087831934),new Average())});
+		dep3=new Dependency(grade, new Feature[]{new OperatorFeature(conj_context,new Equals(214.4605391543),new Average())});
+		dep4=new Dependency(grade, new Feature[]{new OperatorFeature(conj1,new Bigger(100.0),new Average())});
+		dep5=new Dependency(grade, new Feature[]{new OperatorFeature(conj2_context_grounded,new Bigger(100.0),new Average())});
+		dep6=new Dependency(grade, new Feature[]{new OperatorFeature(conj2_context_grounded_logvar_restriction,new Bigger(100.0),new Average())});
 	}
 	
 	@Test
 	public void testComplexFeature() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		Prolog engine=new Prolog();
 		InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 		try {
@@ -141,7 +141,7 @@ public class TestComplexQuery {
 		subst.put(course, new Constant("c1"));
 		Subst s=new Subst(subst);
 		GroundAtom grades1c1=new GroundAtom(grade,s,null);
-		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(Operator_Feature)dep1.getFeatures().get(0),null);		
+		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(OperatorFeature)dep1.getFeatures().get(0),null);		
 		System.out.println(v);
 		assertEquals(new BoolValue(false),v);
 	}
@@ -149,7 +149,7 @@ public class TestComplexQuery {
 	@Test
 	public void testComplexFeature_1() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		Prolog engine=new Prolog();
 		InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 		try {
@@ -165,14 +165,14 @@ public class TestComplexQuery {
 		subst.put(course, new Constant("c1"));
 		Subst s=new Subst(subst);
 		GroundAtom grades1c1=new GroundAtom(grade,s,null);
-		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(Operator_Feature)dep4.getFeatures().get(0),null);		
+		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(OperatorFeature)dep4.getFeatures().get(0),null);		
 		assertEquals(new BoolValue(true),v);
 	}
 	
 	@Test
 	public void testComplexFeatureAggregation() throws Exception{	
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		Prolog engine=new Prolog();
 		InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 		try {
@@ -188,14 +188,14 @@ public class TestComplexQuery {
 		subst.put(course, new Constant("c1"));
 		Subst s=new Subst(subst);
 		GroundAtom grades1c1=new GroundAtom(grade,s,null);
-		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(Operator_Feature)dep2.getFeatures().get(0),null);		    
+		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(OperatorFeature)dep2.getFeatures().get(0),null);		    
 		assertEquals(new BoolValue(false),v);
 	}
 	
 	@Test
 	public void testComplexFeatureAggregationwithContext() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		Prolog engine=new Prolog();
 		InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 		try {
@@ -211,14 +211,14 @@ public class TestComplexQuery {
 		subst.put(course, new Constant("c2"));
 		Subst s=new Subst(subst);
 		GroundAtom grades1c1=new GroundAtom(grade,s,null);
-		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(Operator_Feature)dep3.getFeatures().get(0),null);		    
+		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(OperatorFeature)dep3.getFeatures().get(0),null);		    
 		assertEquals(new BoolValue(true),v);
 	}
 	
 	@Test
 	public void testComplexFeatureAggregationwithContext_randvarValue_test() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		Prolog engine=new Prolog();
 		InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 		try {
@@ -234,14 +234,14 @@ public class TestComplexQuery {
 		subst.put(course, new Constant("c2"));
 		Subst s=new Subst(subst);
 		GroundAtom grades1c1=new GroundAtom(grade,s,null);
-		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(Operator_Feature)dep5.getFeatures().get(0),null);		    
+		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(OperatorFeature)dep5.getFeatures().get(0),null);		    
 		assertEquals(new BoolValue(true),v);
 	}
 	
 	@Test
 	public void testComplexFeatureAggregationwithContext_and_logvar_restrictions_randvarValue_test() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		Prolog engine=new Prolog();
 		InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 		try {
@@ -258,7 +258,7 @@ public class TestComplexQuery {
 		subst.put(course, new Constant("c2"));
 		Subst s=new Subst(subst);
 		GroundAtom grades1c1=new GroundAtom(grade,s,null);
-		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(Operator_Feature)dep6.getFeatures().get(0),null);		    
+		Value v=tQrs.getFeatureValue(new GroundAtom(grade,s,null), engine,(OperatorFeature)dep6.getFeatures().get(0),null);		    
 		assertEquals(new BoolValue(true),v);
 	}
 

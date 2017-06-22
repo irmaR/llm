@@ -10,6 +10,7 @@ import hybrid.experimenter.CrossValidation;
 import hybrid.featureGenerator.AbstractConjunction;
 import hybrid.features.FeatureTypeException;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.TuPrologDataLoader;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Argument;
@@ -78,7 +79,7 @@ public class TestCrossValidation {
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
 		Data d=null;
 		try {
-			d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			List<GroundAtom> g=d.getInterpretations().get(0).getGroundAtoms(intelligence);
 			
 			GroundAtom g1=g.get(0);

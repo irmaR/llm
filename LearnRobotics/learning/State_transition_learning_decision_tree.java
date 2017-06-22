@@ -12,6 +12,7 @@ import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Atom;
 import hybrid.network.NetworkInfo;
 import hybrid.network.Predicate;
+import hybrid.penalties.PenalizeAggregatesAndOperators;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.structureLearning.DTDependencySelectorStandard;
 import hybrid.structureLearning.DecisionTreeLearning;
@@ -228,7 +229,7 @@ public class State_transition_learning_decision_tree {
 		QueryData tr=training_data_machine.getQueryResults(test);
 		System.out.println(tr);
 */
-		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard());
+		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard(AlgorithmParameters.output_path,new PenalizeAggregatesAndOperators()));
 		dtl.setOutputDirectory(parameters.output_path);
 		StructureLearner str_learner=new StructureLearner(fGen,dtl,ntw,training_data_machine,validation_machine,test_machine);	
 

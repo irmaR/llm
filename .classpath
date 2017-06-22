@@ -5,7 +5,7 @@
 	<classpathentry kind="src" path="LearnRobotics"/>
 	<classpathentry kind="src" path="DavideRoboticsTransition"/>
 	<classpathentry kind="src" path="VisibilityLearning"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-7-openjdk-amd64"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.7.0_51"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="lib/2p-2.9.1/bin/2p.jar"/>
 	<classpathentry kind="lib" path="lib/argparse4j-0.4.3.jar"/>

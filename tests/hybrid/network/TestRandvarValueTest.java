@@ -5,8 +5,6 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import hybrid.core.GenerateUniqueIDforAtom;
 import hybrid.dependencies.Dependency;
 import hybrid.featureGenerator.AtomCombinationCreator;
 import hybrid.featureGenerator.Standard_Conjunction;
@@ -43,7 +41,6 @@ public class TestRandvarValueTest {
 	 */
 	@Before
 	public void setUp() throws FeatureTypeException{
-		GenerateUniqueIDforAtom.reset();
 		System.out.println(pathToInterpretations);
 		stud=new Type("student");
 		Type c=new Type("course");

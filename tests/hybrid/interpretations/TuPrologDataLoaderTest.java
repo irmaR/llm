@@ -82,7 +82,7 @@ public class TuPrologDataLoaderTest {
 	public void testDataLoader(){
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1.0));
 		try {
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			List<GroundAtom> g=d.getInterpretations().get(0).getGroundAtoms(intelligence);
 			
 			GroundAtom g1=g.get(0);
@@ -102,7 +102,7 @@ public class TuPrologDataLoaderTest {
 	public void testNumberOfGroundings(){
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1.0));
 		try {
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			assertEquals(12, d.getNrGroundingsInData(intelligence));
 			assertEquals(9, d.getNrGroundingsInData(difficulty));
 			assertEquals(7, d.getNrGroundingsInData(ability));
@@ -149,7 +149,7 @@ public class TuPrologDataLoaderTest {
 	public void testSubsampling(){
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1.0));
 		try {
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		    for(Interpretation i:d.getInterpretations()){
 		    	System.out.println(i.getDatabaseFormat());
 		    }

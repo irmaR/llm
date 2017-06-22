@@ -17,6 +17,7 @@ import hybrid.features.Proportion;
 import hybrid.features.ValueFt;
 import hybrid.interpretations.Assignment;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.Domain;
 import hybrid.interpretations.Interpretation;
 import hybrid.interpretations.TuPrologDataLoader;
@@ -44,8 +45,7 @@ import hybrid.parameters.CLGParameters;
 import hybrid.parameters.FeatureValuePair;
 import hybrid.parameters.Gaussian;
 import hybrid.parameters.LinearGParameters;
-import hybrid.queryMachine.MDLPenalty;
-import hybrid.queryMachine.NoPenalty;
+import hybrid.penalties.*;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
 
@@ -315,7 +315,7 @@ public class TestCLGEvaluator {
 		ntw=new NetworkInfo(new Atom[]{intelligence,friend,grade,takes,teaches,ability,difficulty},new Type[]{stud,c,p});	
 		CLGEvaluator clG=new CLGEvaluator();
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		TuPrologQueryMachine tuPrologQueryMachine_training=new TuPrologQueryMachine(d, new MDLPenalty());
 		//features
 		Mode ft1=new Mode(new Standard_Conjunction(intelligence,new PosLiteral(takes),new PosLiteral(difficulty)));

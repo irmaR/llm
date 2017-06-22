@@ -22,8 +22,7 @@ import hybrid.interpretations.Interpretation;
 import hybrid.network.*;
 import hybrid.parameters.BadProbabilityDistribution;
 import hybrid.parameters.PMF;
-import hybrid.queryMachine.MDLPenalty;
-import hybrid.queryMachine.NoPenalty;
+import hybrid.penalties.NoPenalty;
 import hybrid.querydata.QueryData;
 
 public class TestCategoricalPriorEvaluator {
@@ -145,10 +144,9 @@ public class TestCategoricalPriorEvaluator {
 		qD.addMarkovBlanket(i, mB7);
 		double pll_expected=Logarithm2.logarithm2(0.2)+Logarithm2.logarithm2(0.2)+Logarithm2.logarithm2(0.2)+Logarithm2.logarithm2(0.2)+Logarithm2.logarithm2(0.6)+Logarithm2.logarithm2(0.6)+Logarithm2.logarithm2(0.6);
         ProbabilityMassFunction cp=new ProbabilityMassFunction(qD.getDep(),new ProbabilityMassFunctionEvaluator(),new PMF(qD.getDep()));
-        cp.setParameters(new PMF(grade, prob,0.1));
+        cp.setParameters(new PMF(qD.getDep(),grade, prob,0.1));
         qD.getDep().setCpd(cp);
-        
-		assertEquals(pll_expected,cpd.calculatePLL(qD, cp.getParameters(),new NoPenalty()),0.001);
+		assertEquals(pll_expected,cpd.calculatePLL(qD, cp.getParameters(),new NoPenalty()).getScore(),0.001);
         }
 	
 	@Test

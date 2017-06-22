@@ -14,6 +14,7 @@ import hybrid.features.Mode;
 import hybrid.features.ValueFt;
 import hybrid.interpretations.Assignment;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.Domain;
 import hybrid.interpretations.Interpretation;
 import hybrid.interpretations.TuPrologDataLoader;
@@ -39,13 +40,12 @@ import hybrid.parameters.AssignmentKey;
 import hybrid.parameters.CGParameters;
 import hybrid.parameters.FeatureValuePair;
 import hybrid.parameters.Gaussian;
+import hybrid.parameters.GaussianCoefficients;
 import hybrid.parameters.LinearGParameters;
 import hybrid.parameters.UndefinedAssignmentKey;
-import hybrid.queryMachine.MDLPenalty;
-import hybrid.queryMachine.NoPenalty;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
-
+import hybrid.penalties.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -233,34 +233,34 @@ public class TestCGEvaluation {
 		HashMap<Feature,Value> parentValuesLow_Easy=new HashMap<Feature, Value>();
 		parentValuesLow_Easy.put(ft, new StringValue("low"));
 		parentValuesLow_Easy.put(ft1, new StringValue("easy"));
-		Gaussian par1=par.getParameters(qD.getDep(),parentValuesLow_Easy,par,cgEval);	
+		GaussianCoefficients par1=par.getParameters(qD.getDep(),parentValuesLow_Easy,par,cgEval);	
 		assertEquals(1.0,par1.getMean(),0.01);
-		assertEquals(Double.NaN,par1.getStd(),0.01);
+		assertEquals(Double.NaN,par1.getSigma(),0.01);
 
 		//Checking pars for: grade=mid, difficulty=easy
 		HashMap<Feature,Value> parentValuesMid_Easy=new HashMap<Feature, Value>();
 		parentValuesMid_Easy.put(ft, new StringValue("mid"));
 		parentValuesMid_Easy.put(ft1, new StringValue("easy"));
-		Gaussian par3=par.getParameters(qD.getDep(),parentValuesMid_Easy,par,cgEval);	
+		GaussianCoefficients par3=par.getParameters(qD.getDep(),parentValuesMid_Easy,par,cgEval);	
 		assertEquals(Double.NaN,par3.getMean(),0.01);
-		assertEquals(Double.NaN,par3.getStd(),0.01);
+		assertEquals(Double.NaN,par3.getSigma(),0.01);
 
 
 		//Checking pars for: grade=high, difficulty=easy
 		HashMap<Feature,Value> parentValuesHIGHEasY=new HashMap<Feature, Value>();
 		parentValuesHIGHEasY.put(ft, new StringValue("high"));
 		parentValuesHIGHEasY.put(ft1, new StringValue("easy"));
-		Gaussian par2=par.getParameters(qD.getDep(),parentValuesHIGHEasY,par,cgEval);	
+		GaussianCoefficients par2=par.getParameters(qD.getDep(),parentValuesHIGHEasY,par,cgEval);	
 		assertEquals(5.5,par2.getMean(),0.01);
-		assertEquals(2.123,par2.getStd(),0.01);
+		assertEquals(2.123,par2.getSigma(),0.01);
 
 		//Checking pars for: grade=low, difficulty=medium
 		HashMap<Feature,Value> parentValuesLow_Medium=new HashMap<Feature, Value>();
 		parentValuesLow_Medium.put(ft, new StringValue("low"));
 		parentValuesLow_Medium.put(ft1, new StringValue("medium"));
-		Gaussian par4=par.getParameters(qD.getDep(),parentValuesLow_Medium,par,cgEval);	
+		GaussianCoefficients par4=par.getParameters(qD.getDep(),parentValuesLow_Medium,par,cgEval);	
 		assertEquals(Double.NaN,par4.getMean(),0.01);
-		assertEquals(Double.NaN,par4.getStd(),0.01);
+		assertEquals(Double.NaN,par4.getSigma(),0.01);
 		assertEquals(4.0,par.getMarginalProb().getMean(),0.1);
 		assertEquals(2.16,par.getMarginalProb().getStd(),0.1);
 
@@ -292,7 +292,7 @@ public class TestCGEvaluation {
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
 		NetworkInfo ntw=new NetworkInfo(new Atom[]{intelligence,friend,grade,takes,teaches,ability,difficulty},new Type[]{stud,c,p});
 		
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		//System.out.println("Data "+d.toDatabaseFormat());
 		TuPrologQueryMachine tuPrologQueryMachine=new TuPrologQueryMachine(d, new MDLPenalty());
 		Standard_Conjunction con=new Standard_Conjunction(intelligence,Arrays.asList(new PosLiteral(takes),new PosLiteral(difficulty)));
@@ -307,30 +307,18 @@ public class TestCGEvaluation {
         UndefinedAssignmentKey key4=new UndefinedAssignmentKey();
         
         assertEquals(105.941,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key1).getMean(),0.01);
-        assertEquals(13.032,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key1).getStd(),0.01);
+        assertEquals(13.032,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key1).getSigma(),0.01);
         
         assertEquals(99.608,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key2).getMean(),0.01);
-        assertEquals(23.43,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key2).getStd(),0.01);
+        assertEquals(23.43,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key2).getSigma(),0.01);
         
         assertEquals(Double.NaN,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key3).getMean(),0.01);
-        assertEquals(Double.NaN,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key3).getStd(),0.01);
+        assertEquals(Double.NaN,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key3).getSigma(),0.01);
         
         assertEquals(104.151,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key4).getMean(),0.01);
-        assertEquals(0.430,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key4).getStd(),0.01);
+        assertEquals(0.430,((CGParameters)((CG)dep.getCpd()).getParameters()).getParameters(key4).getSigma(),0.01);
 	}
 	
-	@Test
-	public void getProbability() throws SubstitutionException{
-		HashMap<Feature,Value> hM1=new HashMap<Feature,Value>();
-		hM1.put(gradeFt,new StringValue("low"));
-		hM1.put(diffFt, new StringValue("easy"));
-		CGEvaluator cgEval=new CGEvaluator();
-		CGParameters cgPars=new CGParameters(qD.getDep());
-		cgPars.addConditionalParameter(new AssignmentKey(new Feature[]{gradeFt,diffFt},new StringValue[]{new StringValue("low"),new StringValue("easy")}), new Gaussian(5,1));
-		assertEquals(0.242,cgEval.getProbability(new MarkovBlanket(new GroundAtom(intelligence,new Subst(new Logvar[]{student},new Constant[]{new Constant("s6")}),new NumberValue(4)),qD.getDep(),hM1), cgPars),0.01);
-	    
-	
-	}
 	
 	@Test
 	public void estimateParametersDependency3() throws Exception{
@@ -358,7 +346,7 @@ public class TestCGEvaluation {
 		ntw=new NetworkInfo(new Atom[]{intelligence,friend,grade,takes,teaches,ability,difficulty},new Type[]{stud,c,p});	
 		CGEvaluator cG=new CGEvaluator();
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		TuPrologQueryMachine tuPrologQueryMachine_training=new TuPrologQueryMachine(d, new MDLPenalty());
 		Dependency dep=new Dependency(intelligence,new Feature[]{new Mode(new Standard_Conjunction(intelligence,new PosLiteral(grade)))});
 	
@@ -395,7 +383,7 @@ public class TestCGEvaluation {
 		ntw=new NetworkInfo(new Atom[]{intelligence,friend,grade,takes,teaches,ability,difficulty},new Type[]{stud,c,p});	
 		CGEvaluator cG=new CGEvaluator();
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		TuPrologQueryMachine tuPrologQueryMachine_training=new TuPrologQueryMachine(d, new MDLPenalty());
 		Dependency dep=new Dependency(intelligence,new Feature[]{new Mode(new Standard_Conjunction(intelligence,new PosLiteral(takes),new PosLiteral(difficulty))),new Exist(new Standard_Conjunction(intelligence,new PosLiteral(takes)))});
 		TuPrologQueryMachine tuPrologQueryMachine_validation=new TuPrologQueryMachine(d, new MDLPenalty());
@@ -429,14 +417,14 @@ public class TestCGEvaluation {
 		ntw=new NetworkInfo(new Atom[]{intelligence,friend,grade,takes,teaches,ability,difficulty},new Type[]{stud,c,p});	
 		CGEvaluator cG=new CGEvaluator();
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		TuPrologQueryMachine tuPrologQueryMachine_training=new TuPrologQueryMachine(d, new MDLPenalty());
 		Dependency dep=new Dependency(intelligence,new Feature[]{new Mode(new Standard_Conjunction(intelligence,new PosLiteral(takes),new PosLiteral(difficulty))),new Exist(new Standard_Conjunction(intelligence,new PosLiteral(takes)))});
 		TuPrologQueryMachine tuPrologQueryMachine_validation=new TuPrologQueryMachine(d, new MDLPenalty());
 	    cG.estimateParameters(tuPrologQueryMachine_training.getQueryResults(dep));
 	    System.out.println(tuPrologQueryMachine_training.getQueryResults(dep));
 		System.out.println(dep.getCpd().getParameters());
-	    assertEquals(-62.088,cG.calculatePLL(tuPrologQueryMachine_validation.getQueryResults(dep), (CGParameters) dep.getCpd().getParameters(),new NoPenalty()),0.01);
+	    assertEquals(-62.088,cG.calculatePLL(tuPrologQueryMachine_validation.getQueryResults(dep), (CGParameters) dep.getCpd().getParameters(),new NoPenalty()).getScore(),0.01);
 	
 	}
 	

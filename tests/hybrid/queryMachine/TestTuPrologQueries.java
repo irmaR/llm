@@ -10,6 +10,7 @@ import hybrid.features.Feature;
 import hybrid.features.FeatureTypeException;
 import hybrid.features.Mode;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.TuPrologDataLoader;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Atom;
@@ -90,7 +91,7 @@ public class TestTuPrologQueries {
 		@Test
 		public void testModeDependency1Interpretation0() throws Exception{
 			TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			Prolog engine=new Prolog();
 			InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 			try {
@@ -124,7 +125,7 @@ public class TestTuPrologQueries {
 		@Test
 		public void testModeDependency1Interpretation1() throws Exception{
 			TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			Prolog engine=new Prolog();
 			InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 			try {
@@ -150,7 +151,7 @@ public class TestTuPrologQueries {
 		@Test
 		public void testModeDependency1Interpretation3() throws Exception{
 			TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			Prolog engine=new Prolog();
 			InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 			try {

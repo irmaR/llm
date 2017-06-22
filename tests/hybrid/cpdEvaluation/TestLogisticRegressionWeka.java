@@ -51,11 +51,9 @@ import hybrid.parameters.PMF;
 import hybrid.parameters.Parameters;
 import hybrid.parameters.Regression;
 import hybrid.parameters.WrongValueSpecification;
-import hybrid.queryMachine.MDLPenalty;
-import hybrid.queryMachine.NoPenalty;
+import hybrid.penalties.*;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
-import hybrid.structure_learning.StructureLearner;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -37,7 +37,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import sun.org.mozilla.javascript.tools.idswitch.FileBody;
 
 public class DTDependencySelectorExternalScript extends DTDependencySelection{
 	String output_directory=null;

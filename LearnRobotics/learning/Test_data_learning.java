@@ -35,6 +35,7 @@ import hybrid.network.Atom;
 import hybrid.network.NetworkInfo;
 import hybrid.network.PosLiteral;
 import hybrid.operators.Addition;
+import hybrid.penalties.PenalizeAggregatesAndOperators;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
 import hybrid.structureLearning.DTDependencySelectorStandard;
@@ -95,7 +96,7 @@ public class Test_data_learning {
 			}
 		}
 		fts.add(new ValueFt(new Standard_Conjunction(out,new PosLiteral(ntw.getPredicateNameToAtom().get("in")))));
-		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard());
+		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard(AlgorithmParameters.output_path,new PenalizeAggregatesAndOperators()));
 		dtl.setOutputDirectory(AlgorithmParameters.output_path);
 		StructureLearner str_learner=new StructureLearner(fGen,dtl,ntw,training_data_machine,training_validation_machine,training_test_machine);	
         fGen.setAdditionalFeatures(fts, ntw.getAtom("out"));

@@ -6,11 +6,11 @@ import hybrid.featureGenerator.ComplexConjunction;
 import hybrid.featureGenerator.Standard_Conjunction;
 import hybrid.featureGenerator.ConjunctionConstructionProblem;
 import hybrid.features.Average;
-import hybrid.features.Operator_Feature;
 import hybrid.features.Feature;
 import hybrid.features.Mode;
 import hybrid.features.ValueFt;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.Interpretation;
 import hybrid.interpretations.TuPrologDataLoader;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
@@ -96,7 +96,7 @@ public class TestAverageQuery {
 		@Test
 		public void testDataLoaderNoSelector() throws Exception{
 			TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			Prolog engine=new Prolog();
 			InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 			try {
@@ -119,7 +119,7 @@ public class TestAverageQuery {
 		@Test
 		public void testDataLoaderNoSelector1() throws Exception{
 			TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+			Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 			Prolog engine=new Prolog();
 			InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 			try {

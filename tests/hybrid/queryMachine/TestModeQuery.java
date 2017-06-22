@@ -8,6 +8,7 @@ import hybrid.features.Feature;
 import hybrid.features.FeatureTypeException;
 import hybrid.features.Mode;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.TuPrologDataLoader;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Argument;
@@ -94,7 +95,7 @@ public class TestModeQuery {
 	@Test
 	public void testDataLoaderNoSelector() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		Prolog engine=new Prolog();
 		InputStream is = this.getClass().getResourceAsStream("Queries.pl");
 		try {

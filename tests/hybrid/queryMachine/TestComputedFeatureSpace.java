@@ -10,6 +10,7 @@ import hybrid.features.Feature;
 import hybrid.features.Mode;
 import hybrid.features.ValueFt;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.TuPrologDataLoader;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Atom;
@@ -100,7 +101,7 @@ public class TestComputedFeatureSpace {
 	public void testMarkovBlanketCreation() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
 		List<Feature> featureSpace=new ArrayList<Feature>();
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		featureSpace.add(new ValueFt(new Standard_Conjunction(intelligence,Arrays.asList(new Literal(grade)))));
 		featureSpace.add(new Mode(new Standard_Conjunction(intelligence,Arrays.asList(new PosLiteral(friend),new Literal(grade1)))));
 		featureSpace.add(new Average(new Standard_Conjunction(intelligence,Arrays.asList(new PosLiteral(friend),new Literal(intelligence1)))));

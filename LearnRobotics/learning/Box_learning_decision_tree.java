@@ -18,6 +18,7 @@ import hybrid.network.NetworkInfo;
 import hybrid.network.Predicate;
 import hybrid.network.Value;
 import hybrid.network.WrongValueType;
+import hybrid.penalties.PenalizeAggregatesAndOperators;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
 import hybrid.structureLearning.DTDependencySelectorStandard;
@@ -268,7 +269,7 @@ public class Box_learning_decision_tree {
 			System.out.println(fts.get(i));
 		}*/
 		System.out.println("Nr features: "+fts.size());
-		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard());
+		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard(AlgorithmParameters.output_path,new PenalizeAggregatesAndOperators()));
 		dtl.setOutputDirectory(AlgorithmParameters.output_path);
 		StructureLearner str_learner=new StructureLearner(fGen,dtl,ntw,training_data_machine,validation_machine,test_machine);	
 		Dependency dep=new Dependency(ntw.getAtom("pos_x_next"),new Feature[]{});

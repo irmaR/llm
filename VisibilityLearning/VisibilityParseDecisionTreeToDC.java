@@ -36,7 +36,7 @@ public class VisibilityParseDecisionTreeToDC {
 		}
 		System.out.println("TREE TO DC CONVERSION ");
 		FileWriter fw=new FileWriter(new File(output));
-	    fw.append(e.printTree_DC(e.getRoot(),"", new DC_converter()));
+	    fw.append(e.printTree_DC(e.getRoot(), new DC_converter()));
 		fw.close();
 	}
 }

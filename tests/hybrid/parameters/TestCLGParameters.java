@@ -70,19 +70,4 @@ public class TestCLGParameters {
 		difficulty=new Atom(diff,new Logvar[]{course});
 		friend=new Atom(fr,new Logvar[]{student,student});
 		}
-	
-	@Test
-	public void testNumberOfParameters() throws FeatureTypeException, ConjunctionConstructionProblem{
-		Mode ft1=new Mode(new Standard_Conjunction(intelligence,new PosLiteral(grade)));
-		ValueFt ft2=new ValueFt(new Standard_Conjunction(intelligence,new PosLiteral(takes),new PosLiteral(teaches),new PosLiteral(ability)));
-		Dependency dep=new Dependency(intelligence,new Feature[]{ft1,ft2});
-	    CLGParameters clgPars=new CLGParameters(dep);
-	    AssignmentKey key1=new AssignmentKey(new Feature[]{ft1},new Value[]{new StringValue("low")});
-		AssignmentKey key2=new AssignmentKey(new Feature[]{ft1},new Value[]{new StringValue("mid")});
-		AssignmentKey key3=new AssignmentKey(new Feature[]{ft1},new Value[]{new StringValue("high")});
-	    clgPars.addParameter(key1, new LinearGParameters(dep, new Regression(dep,15.0,new Double[]{5.0}), 2.0));
-	    clgPars.addParameter(key2, new LinearGParameters(dep, new Regression(dep,18.0,new Double[]{7.0}), 3.0));
-	    clgPars.addParameter(key3, new LinearGParameters(dep, new Regression(dep,19.0,new Double[]{8.0}), 4.0));
-	    assertEquals(9,clgPars.getNumberOfFreeParameters());
-	}
 }

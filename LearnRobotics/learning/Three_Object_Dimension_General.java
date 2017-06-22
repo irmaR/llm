@@ -14,6 +14,7 @@ import hybrid.network.Atom;
 import hybrid.network.BoolValue;
 import hybrid.network.NetworkInfo;
 import hybrid.network.Value;
+import hybrid.penalties.PenalizeAggregatesAndOperators;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
 import hybrid.querydata.QueryDataFilter;
@@ -71,7 +72,7 @@ public class Three_Object_Dimension_General {
 		System.out.println(" number of features restriction: "+AlgorithmParameters.getFeatureSpaceCutoff());
 		fGen.setNumber_of_features_restriction(AlgorithmParameters.getFeatureSpaceCutoff());
 		fGen.setAdditionalFeatures(extra_features_delta_x1, ntw.getPredicateNameToAtom().get("next_x"));
-		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard());
+		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard(AlgorithmParameters.output_path,new PenalizeAggregatesAndOperators()));
 		dtl.setOutputDirectory(AlgorithmParameters.output_path);
 		//StructureLearner str_learner=new StructureLearner(fGen,dtl,ntw,training_data_machine,validation_machine,test_machine);	
 		StructureLearner str_learner=new StructureLearner(fGen,dtl,ntw,null,null,null);	

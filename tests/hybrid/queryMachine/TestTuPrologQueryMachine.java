@@ -30,6 +30,7 @@ import hybrid.network.UndefinedValue;
 import hybrid.querydata.QueryData;
 import hybrid.features.*;
 import hybrid.interpretations.Data;
+import hybrid.interpretations.DataType;
 import hybrid.interpretations.TuPrologDataLoader;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 
@@ -95,7 +96,7 @@ public class TestTuPrologQueryMachine {
 	@Test
 	public void testDataLoader() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		TuPrologQueryMachine tQ=new TuPrologQueryMachine(d, null);
 		QueryData q=tQ.getQueryResults(dep1);
 		assertEquals(3,q.getQuery_results().size());	
@@ -104,7 +105,7 @@ public class TestTuPrologQueryMachine {
 	@Test
 	public void testCacheCreator() throws Exception{
 		TuPrologDataLoader dataLoader=new TuPrologDataLoader(new TuPrologInterpretationCreator_Subsampling(1));
-		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw);
+		Data d=dataLoader.loadData(pathToInterpretations, "interp", "pl", ntw,DataType.training);
 		TuPrologQueryMachine tQ=new TuPrologQueryMachine(d, null);
 		List<Feature> featureSpace=new ArrayList<Feature>();
 		featureSpace.add(new ValueFt(new Standard_Conjunction(intelligence,Arrays.asList(new Literal(grade)))));

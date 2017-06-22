@@ -19,6 +19,7 @@ import hybrid.interpretations.TuPrologInterpretationCreator_NoSubsampling;
 import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Atom;
 import hybrid.network.NetworkInfo;
+import hybrid.penalties.PenalizeAggregatesAndOperators;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
 import hybrid.structureLearning.DTDependencySelectorStandard;
@@ -69,7 +70,7 @@ public class Learning_three_objects_davide {
 		fGen.setAdditionalFeatures(extra_features_delta_x2, ntw.getPredicateNameToAtom().get("next_x_dimension2"));
 		fGen.setAdditionalFeatures(extra_features_delta_x3, ntw.getPredicateNameToAtom().get("next_x_dimension3"));
 	
-		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard());
+		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard(AlgorithmParameters.output_path,new PenalizeAggregatesAndOperators()));
 		dtl.setOutputDirectory(AlgorithmParameters.output_path);
 		StructureLearner str_learner=new StructureLearner(fGen,dtl,ntw,training_data_machine,validation_machine,test_machine);	
 		LearnedModelTree trees=str_learner.learnModelTree(ntw.getLiterals().toArray(new Atom[ntw.getLiterals().size()]));

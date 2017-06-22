@@ -13,6 +13,7 @@ import hybrid.interpretations.TuPrologInterpretationCreator_Subsampling;
 import hybrid.network.Atom;
 import hybrid.network.NetworkInfo;
 import hybrid.network.Predicate;
+import hybrid.penalties.PenalizeAggregatesAndOperators;
 import hybrid.queryMachine.TuPrologQueryMachine;
 import hybrid.querydata.QueryData;
 import hybrid.structureLearning.DTDependencySelectorStandard;
@@ -86,7 +87,7 @@ public class Bogdan_learnin_decision_tree {
 		exclusion_predicates.put(ntw.getPredicateNameToAtom().get("arm_roll_next"), exclusion_y_pos_a);
 
 		fGen.setExclusionPredicates(exclusion_predicates);
-		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard());
+		DecisionTreeLearning dtl=new DecisionTreeLearning(new DTDependencySelectorStandard(AlgorithmParameters.output_path,new PenalizeAggregatesAndOperators()));
 		dtl.setOutputDirectory(AlgorithmParameters.output_path);
 		dtl.setOutput_query_data(true);
 		StructureLearner str_learner=new StructureLearner(fGen,dtl,ntw,training_data_machine,validation_machine,test_machine);	

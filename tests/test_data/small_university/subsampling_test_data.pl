@@ -1,9 +1,0 @@
-student(s0).
-student(s1).
-student(s2).
-course(c0).
-course(c1).
-course(c2).
-takes(s0,c1).
-takes(s1,c2).
-takes(s2,c0).

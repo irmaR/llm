@@ -104,8 +104,8 @@ public class TestParseDecisionTreeDC {
 		fw.append(testTree.makeDigraph(testTree.getRoot(),""));
 		fw.close();*/
 		FileWriter fw1=new FileWriter(new File("test.dclause"));
-		System.out.println(testTree.printTree_DC(testTree.getRoot(),"", new DC_converter()));
-	    fw1.append(testTree.printTree_DC(testTree.getRoot(),"", new DC_converter()));
+		System.out.println(testTree.printTree_DC(testTree.getRoot(),new DC_converter()));
+	    fw1.append(testTree.printTree_DC(testTree.getRoot(),new DC_converter()));
 	    fw1.close();
 		//System.out.println(testTree.makeDigraph(testTree.getRoot(),""));
 	}
